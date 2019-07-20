@@ -6,8 +6,8 @@ import axios from 'axios';
 
 export const GET_SMURFS = 'GET_SMURFS';
 export const ADD_SMURFS = 'ADD_SMURFS';
-export const GET_SMURF_FAILED = 'GET_SMURF_FAILED';
-export const GET_SMURF_START = 'GET_SMURF_START';
+export const GET_SMURFS_FAILED = 'GET_SMURFS_FAILED';
+export const GET_SMURFS_START = 'GET_SMURFS_START';
 
 /*
   For this project you'll need at least 2 action creators for the main portion,
@@ -38,7 +38,7 @@ export function addSmurfs(name, age, height) {
 }
 
 export function getSmurf(dispatch) {
-  dispatch({ type: GET_SMURF_START });
+  dispatch({ type: GET_SMURFS_START });
 
   axios
     .get('http://localhost:3333/smurfs')
@@ -47,6 +47,6 @@ export function getSmurf(dispatch) {
       dispatch({ type: GET_SMURFS, payload: res.data });
     })
     .catch(err => {
-      dispatch({ type: GET_SMURF_FAILED, payload: err.response.data });
+      dispatch({ type: GET_SMURFS_FAILED, payload: err.response.data });
     });
 }
