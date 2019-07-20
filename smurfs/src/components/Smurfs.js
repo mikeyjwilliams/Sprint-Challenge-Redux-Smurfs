@@ -19,7 +19,7 @@ function Smurfs(props) {
 
 const mapStateToProps = state => {
   return {
-    smurfs: state.smurfs,
+    // smurfs: state.smurfs,
     name: state.name,
     age: state.age,
     height: state.height
