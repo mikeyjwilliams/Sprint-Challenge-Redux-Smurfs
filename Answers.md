@@ -26,4 +26,8 @@ Object.assign
 - middle ware is programs that run between the flow of input and output and give extra capabilities to the program.
 
 1.  Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
+
+- redux-thunk allows async logic that interacts with the store. When you use Thunk your action creators can return a function instead of an action.
+  Also, thunk can delay a action and dispatch only under certain conditions.
+
 1.  Which `react-redux` method links up our `components` with our `redux store`?
