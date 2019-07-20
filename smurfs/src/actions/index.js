@@ -4,6 +4,8 @@
 */
 export const GET_SMURFS = 'GET_SMURFS';
 export const ADD_SMURFS = 'ADD_SMURFS';
+export const SMURF_FAILED = 'SMURF_FAILED';
+export const GET_SMURF_START = 'GET_SMURF_START';
 
 /*
   For this project you'll need at least 2 action creators for the main portion,
