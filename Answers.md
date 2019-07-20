@@ -22,5 +22,8 @@ Object.assign
 - because you can use component and application state at the same time.
 
 1.  What is middleware?
+
+- middle ware is programs that run between the flow of input and output and give extra capabilities to the program.
+
 1.  Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
 1.  Which `react-redux` method links up our `components` with our `redux store`?
