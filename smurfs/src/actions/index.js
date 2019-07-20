@@ -21,3 +21,14 @@ export function getSmurfs(smurfs) {
     payload: smurfs
   };
 }
+
+export function addSmurfs(name, age, height) {
+  return {
+    type: ADD_SMURFS,
+    payload: {
+      name,
+      age,
+      height
+    }
+  };
+}
