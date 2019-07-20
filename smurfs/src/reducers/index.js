@@ -1,7 +1,7 @@
 /*
   Be sure to import in all of the action types from `../actions`
 */
-import { ADD_SMURFS, GET_SMURFS } from '../actions';
+import { ADD_SMURFS, GET_SMURFS, GET_SMURFS_START } from '../actions';
 /*
  Your initial/default state for this project could *Although does not have to* look a lot like this
  {
@@ -30,9 +30,18 @@ const initialState = {
 */
 export default function(state = initialState, action) {
   switch (action.type) {
+    case GET_SMURFS_START:
+      return {
+        ...state,
+        fetchingSmurfs: true
+      };
     case GET_SMURFS:
       console.log(action.payload);
-
-      break;
+      return {
+        ...state,
+        fetchingSmurfs: false
+      };
+    default:
+      return state;
   }
 }
