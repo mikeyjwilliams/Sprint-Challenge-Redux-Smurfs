@@ -31,3 +31,5 @@ Object.assign
   Also, thunk can delay a action and dispatch only under certain conditions.
 
 1.  Which `react-redux` method links up our `components` with our `redux store`?
+
+Provider
