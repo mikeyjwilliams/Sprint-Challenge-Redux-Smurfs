@@ -14,6 +14,13 @@ Object.assign
 - store, brings everything together and holds application state via wrapping around your entire application
 
 1.  What is the difference between Application state and Component state? When would be a good time to use one over the other?
+
+- component state is solely on the component, while application state is in the redux store and can be accessed by any component by the higher component
+  connect.
+- if you were doing say a form that needed a 'name' and 'description' on the form but afterwards to clear them this would be good to use with component state.
+- WHILE in the form sending the data back and forth you would use application state.
+- because you can use component and application state at the same time.
+
 1.  What is middleware?
 1.  Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
 1.  Which `react-redux` method links up our `components` with our `redux store`?
