@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getSmurf } from '../actions/index';
+import { getSmurf } from '../actions';
 
 class SmurfForm extends Component {
   constructor() {
@@ -27,7 +27,7 @@ class SmurfForm extends Component {
 
     this.setState({
       name: '',
-      age: 0,
+      age: '',
       height: ''
     });
   };
@@ -35,7 +35,7 @@ class SmurfForm extends Component {
   render() {
     return (
       <div>
-        <form>
+        <form onSubmit={this.submitSmurf}>
           <input
             type="text"
             name="name"
@@ -49,7 +49,7 @@ class SmurfForm extends Component {
           <input
             type="number"
             name="age"
-            value={0}
+            value={this.state.age}
             placeholder="Age..."
             onChange={this.changeHandler}
             required
@@ -59,7 +59,7 @@ class SmurfForm extends Component {
           <input
             type="text"
             name="height"
-            value="height"
+            value={this.state.height}
             placeholder="Height..."
             onChange={this.changeHandler}
             required
@@ -72,4 +72,12 @@ class SmurfForm extends Component {
     );
   }
 }
-export default SmurfForm;
+
+const mapDispatchToProps = {
+  getSmurf: getSmurf
+};
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(SmurfForm);
