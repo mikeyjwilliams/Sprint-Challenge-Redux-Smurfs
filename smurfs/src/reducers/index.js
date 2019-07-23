@@ -39,7 +39,8 @@ export default function(state = initialState, action) {
       console.log(action.payload);
       return {
         ...state,
-        fetchingSmurfs: false
+        fetchingSmurfs: false,
+        smurfs: action.payload
       };
     default:
       return state;
