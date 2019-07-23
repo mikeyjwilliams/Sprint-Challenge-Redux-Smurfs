@@ -6,8 +6,10 @@ import axios from 'axios';
 
 export const GET_SMURFS = 'GET_SMURFS';
 export const ADD_SMURFS = 'ADD_SMURFS';
+
 export const GET_SMURFS_FAILED = 'GET_SMURFS_FAILED';
 export const GET_SMURFS_START = 'GET_SMURFS_START';
+export const GET_SMURFS_FETCHING = 'GET_SMURFS_FETCHING';
 
 /*
   For this project you'll need at least 2 action creators for the main portion,
@@ -39,7 +41,7 @@ export function addSmurfs(name, age, height) {
 
 export function getSmurf(dispatch) {
   dispatch({ type: GET_SMURFS_START });
-
+  console.log('smurfs');
   axios
     .get('http://localhost:3333/smurfs')
     .then(res => {
