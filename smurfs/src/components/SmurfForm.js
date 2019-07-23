@@ -1,6 +1,37 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { getSmurf } from '../actions/index';
 
 class SmurfForm extends Component {
+  constructor() {
+    super();
+    this.state = {
+      name: '',
+      age: 0,
+      height: ''
+    };
+  }
+
+  changeHandler = e => {
+    e.preventDefault();
+    this.setState({
+      [e.target.name]: e.target.value
+    });
+  };
+
+  submitSmurf = e => {
+    e.preventDefault();
+    const { name, age, height } = this.state;
+
+    this.props.getSmurf(name, age, height);
+
+    this.setState({
+      name: '',
+      age: 0,
+      height: ''
+    });
+  };
+
   render() {
     return (
       <div>
@@ -8,8 +39,9 @@ class SmurfForm extends Component {
           <input
             type="text"
             name="name"
-            value="name"
+            value={this.state.name}
             placeholder="Name..."
+            onChange={this.changeHandler}
             required
           />
           <br />
@@ -19,6 +51,7 @@ class SmurfForm extends Component {
             name="age"
             value={0}
             placeholder="Age..."
+            onChange={this.changeHandler}
             required
           />
           <br />
@@ -28,6 +61,7 @@ class SmurfForm extends Component {
             name="height"
             value="height"
             placeholder="Height..."
+            onChange={this.changeHandler}
             required
           />
           <br />
